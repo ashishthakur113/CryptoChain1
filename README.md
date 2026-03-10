@@ -11,7 +11,7 @@ This project is built mainly for **learning, practice, and portfolio purposes**,
 
 ## 🚀 Live Demo
 
-🔗 [View the live website](https://cryptochain-1.netlify.app/)
+🔗 [View the live website](https://crypto-chain1.vercel.app/)
 
 ---
 
