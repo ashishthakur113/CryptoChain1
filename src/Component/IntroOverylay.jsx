@@ -34,7 +34,7 @@ export default function IntroOverylay({onFinish}) {
   return (
     <div ref={overlayRef} style={styles.overlay}>
       <div ref={textRef} className='flex flex-col items-center md:gap-3 gap-1'>
-          <img src="/logo.png" className='w-40 h-40' alt="" />
+          <img src="/logo1.png" className='w-40 h-40' alt="" />
           <h1 >CryptoChain</h1>
           <img src="/Crypto.png" className='md:w-full md:h-60 h-40 w-80' alt="" />
       </div>
