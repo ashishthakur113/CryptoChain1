@@ -73,7 +73,7 @@ export default function Navbar() {
           to="/"
           className="nav-logo opacity-0 -translate-y-5 font-bold flex items-center gap-1 text-lg tracking-wide"
         >
-          <img src="/logo.png" className="w-10 h-10" alt="Logo" />
+          <img src="/logo1.png" className="w-10 h-10" alt="Logo" />
           <span className="pb-1 text-sm md:text-lg oswald">CryptoChain</span>
         </NavLink>
 

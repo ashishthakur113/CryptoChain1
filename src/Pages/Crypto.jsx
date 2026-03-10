@@ -60,8 +60,7 @@ export default function Crypto() {
        </div>
       <div className="relative mt-10">
 
-  {/* Mascot Image */}
-  <img src="/look.png" alt="mascot" className="absolute -left-28 top-10 w-40 h-40 hidden md:block object-contain "/>
+  <img src="/img2.png" alt="mascot" className="absolute -left-28 top-10 w-40 h-40 hidden md:block object-contain "/>
 
   {/* Table */}
   <div className="text-white border-[#415a77] border-2 rounded-2xl ">

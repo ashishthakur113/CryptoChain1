@@ -5,14 +5,15 @@ import { useParams } from 'react-router-dom'
 import { CoinContext } from '../Context/CoinContext';
 import Coin_Chart from '../Component/Coin_Chart';
 import { FaFacebook } from "react-icons/fa6";
-import { FaTwitter, FaReddit, FaGithub ,FaHeart  } from "react-icons/fa";
+import { FaTwitter, FaReddit, FaGithub, FaHeart } from "react-icons/fa";
+import SEO from '../Component/SEO';
 
 
 export default function CoinInfo() {
 
-   useEffect(() => {
-     window.scrollTo({ top: 0, behavior: "smooth" });
-   } , []);
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
 
   const { coinId } = useParams();
@@ -85,6 +86,10 @@ export default function CoinInfo() {
 
     return (
       <div className='bg-[#0D1421] min-h-screen text-white px-4  md:px-26 py-20'>
+        <SEO
+          title={`${coinData.name} (${coinData.symbol.toUpperCase()}) Price | CryptoChain`}
+          description={`Track ${coinData.name} price, market cap, trading volume, and latest crypto market data on CryptoChain.`}
+        />
         <div className='flex flex-col border-b border-[#415a77] '>
           <div className='flex  items-center border-b border-[#415a77] pb-1 gap-2'>
             <img src={coinData.image.small} alt="coin_image" className='md:w-16 md:h-16 w-10 h-10' />
@@ -103,14 +108,14 @@ export default function CoinInfo() {
               </p>
               <p className={`${priceChanged >= 0 ? "text-green-400" : "text-red-600"} text-xl font-bold`}>{priceChanged >= 0 ? "+" : "-"} {currency.symbol}{Math.abs(priceChanged).toLocaleString()}</p>
             </div>
-           <div className='flex justify-between mr-5'>
-             <div className='my-2 flex gap-3 '>
-              <p className='text-md text-[#B3B7C7] bg-[#1A1E2C] py-2 md:py-3 px-4 w-fit rounded-sm '>Rank #{coinData.market_cap_rank}</p>
-              <p className='text-md text-[#B3B7C7] bg-[#1A1E2C] py-2 md:py-3 px-4 w-fit rounded-sm '>Coin</p>
-              <p className='text-md text-[#B3B7C7] bg-[#1A1E2C] py-2 md:py-3 px-4 w-fit rounded-sm '>BlockChain</p>
+            <div className='flex justify-between mr-5'>
+              <div className='my-2 flex gap-3 '>
+                <p className='text-md text-[#B3B7C7] bg-[#1A1E2C] py-2 md:py-3 px-4 w-fit rounded-sm '>Rank #{coinData.market_cap_rank}</p>
+                <p className='text-md text-[#B3B7C7] bg-[#1A1E2C] py-2 md:py-3 px-4 w-fit rounded-sm '>Coin</p>
+                <p className='text-md text-[#B3B7C7] bg-[#1A1E2C] py-2 md:py-3 px-4 w-fit rounded-sm '>BlockChain</p>
+              </div>
+
             </div>
-             
-           </div>
             <div className='flex border-y border-[#415a77] px-4 mt-3 py-3 md:mr-5 justify-between md:justify-around'>
               <h1 className='text-sm'> <span className='font-bold text-sm '>24H Volume </span> : {currency.symbol}{volume24h.toLocaleString()}</h1>
               <h1 className='text-sm'> <span className='font-bold text-sm '>Market Cap </span> : {currency.symbol}{marketCap.toLocaleString()}</h1>
@@ -159,7 +164,7 @@ export default function CoinInfo() {
                 <li>{currency.symbol} {marketCap.toLocaleString()}</li>
               </ul>
             </div>
-           
+
             <div className="flex flex-wrap gap-4 text-sm">
               {coinData.links.homepage[0] && (
                 <a href={coinData.links.homepage[0]} target="_blank" className={iconStyle}> <img src={coinData.image.small} className='w-6 h-6' alt="image" /> Website</a>

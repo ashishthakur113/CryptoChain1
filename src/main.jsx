@@ -5,13 +5,16 @@ import App from './App.jsx'
 import CoinContextProvider from './Context/CoinContext.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import AuthProvider, { AuthContext } from './Context/AuthContext.jsx'
+import { HelmetProvider } from 'react-helmet-async'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
+  <HelmetProvider>
     <AuthProvider>
       <CoinContextProvider>
         <App />
       </CoinContextProvider>
     </AuthProvider>
-  </BrowserRouter>
+  </HelmetProvider>
+</BrowserRouter>
 )
